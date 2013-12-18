@@ -1,0 +1,28 @@
+<div id="content-container">
+	<div id="content2">
+<h1>Receipt</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customer:</b>
+  <%= @download.customer.email_address %>
+</p>
+
+<p>
+  <b>Album:</b>
+  <%= @download.album.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @download.date %>
+</p>
+
+<p>
+  <b>Payment method:</b>
+  <%= @download.payment_method %>
+</p>
+
+<%= link_to 'Back to albums', albums_path %>
+</div> <!--content -->
+</div> <!--content-container -->

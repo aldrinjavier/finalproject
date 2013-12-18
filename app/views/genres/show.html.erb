@@ -1,0 +1,17 @@
+<div id="content-container">
+	<div id="content2">
+<p id="notice"><%= notice %></p>
+<% if !@genre.albums.empty? %>
+<h1><%= @genre.genre %> <br></h1><br \>
+<% @genre.albums.each do |g| %>
+<%= link_to g.title, g %></td><br>
+<br \>
+<% end %>
+<% else%>
+		<h1> <%= @genre.genre %> has no album yet <br></h1>
+		<% end %>
+<br>
+
+<b><%= link_to 'Back', artists_path %></b>
+</div> <!--content -->
+</div> <!--content-container -->

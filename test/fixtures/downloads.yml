@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  album_id: 1
+  date: 2013-10-09
+  payment_method: MyString
+
+two:
+  customer_id: 1
+  album_id: 1
+  date: 2013-10-09
+  payment_method: MyString

@@ -1,0 +1,46 @@
+
+<div id="content-container">
+	<div id="content">
+<p id="notice"><%= notice %></p>
+<h1>Account Details</h1>
+<p>
+  <b>First name:</b>
+  <%= @customer.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <b>Email address:</b>
+  <%= @customer.email_address %>
+</p>
+
+<p>
+  <b>Contact number:</b>
+  <%= @customer.contact_number %>
+</p>
+<p>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@customer.latitude}%2C#{@customer.longitude}" %>
+</p>
+
+<% if !@customer.downloads.empty? %>
+<b> You have purchased the following item(s):<br></b><br \>
+<% @customer.downloads.each do |d| %>
+<%= d.album.title %></td>
+<br \>
+<% end %>
+
+<% else%>
+		<b> <%= @customer.first_name %> has not purchased any album yet <br><b \>
+<% end %>
+<br>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to "Home ", root_path%> |
+<%= link_to "Browse Albums ", albums_path%>
+</div> <!--content-container -->
+</div>

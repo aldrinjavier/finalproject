@@ -1,0 +1,26 @@
+
+<%= form_for(@download) do |f| %>
+
+  <p><b>User name:</b> <%= @current_customer.email_address %></p>
+  <p><b>Customer name:</b> <%= @current_customer.first_name %> <%= @current_customer.last_name %></p>
+  <p><b>Album:</b> <%= @download.album.title %></p>
+  <div class="field">
+    <%= f.label :customer_id, :CustomerID %><br />
+    <%= f.text_field :customer_id, :readonly=>true%>
+  </div>
+  <div class="field">
+    <%= f.label :album_id, :AlbumID %><br />
+    <%= f.text_field :album_id, :readonly=>true%>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, :readonly=>true%>
+  </div>
+  <div class="field">
+    <%= f.label :payment_method %><br />
+    <%= f.select :payment_method,["Master Card", "Visa", "Paypal"], :selected => 'Master Card' %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Download Album" %>
+  </div>
+<% end %>

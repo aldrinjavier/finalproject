@@ -1,0 +1,87 @@
+
+<div id="content-container">
+	<div id="content">
+								<!--IF SIGNED IN-->
+	<% if !signed_in? %>
+	
+		<h1 >Welcome to Aldrin's MUSIC WORLD...</h1>
+		<p >Where you can buy and download music album from the world's largest online music catalogue.<br>
+				<br>Register now to access wide range of album collection from our database.<br><br>
+				Flick your Bic with the Music<br>
+Do a high kick with the music<br>
+Twirl a walking stick with the music<br>
+Do you know how to get sick<br>
+with the music<br>
+<br>
+Tweak and wreak with the music<br>
+Haute mystique<br>
+Post up chic<br>
+with the music<br>
+Are you all the way sick<br>
+with the music<br>
+<br>
+do a trick with the music<br>
+lickety split with the music<br>
+roll up and pick with the music<br>
+I am all the way sick
+with the music.
+
+
+
+		</div> <!--content -->
+
+		<div id="aside">
+			<div id="content1">
+				<h3>NOT YET REGISTERED?<br></h3>
+					<p>Create an account by clicking the sign up link below. It is absolutely free.</p>
+					<p><b><%= link_to "SIGN UP", new_customer_path %></b></p>
+					<p>After getting registered, you will be able to purchase an album and manage your account.</p>
+				<h3>ALREADY A MEMBER?<br></h3>
+					<p>If you are already registered, please click the sign in link below.</p>
+					<p><b><%= link_to "Sign In ", signin_path %></b></p>
+			</div> <!--content1 -->
+		</div> <!--aside -->
+	
+								<!--IF NOT SIGNED IN-->
+	<% else %>
+	
+		<div id="content">
+			<h1 ><center>Welcome <%= @current_customer.first_name %> <%= @current_customer.last_name %>!</center></h1><br>
+				<h2>Account Details:</h2><br>
+					<div id="margin1">
+					<p><b>First name:</b> <%= @current_customer.first_name %></p>
+					<p><b>Last name:</b> <%= @current_customer.last_name %></p>
+					<p><b>Email address:</b> <%= @current_customer.email_address %></p>
+					<p><b>Contact number:</b> <%= @current_customer.contact_number %></p>
+					<p><b>Address</b> <%= @current_customer.address %></p>
+					<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@current_customer.latitude}%2C#{@current_customer.longitude}" %>
+					</div>
+		</div> <!--content -->
+		<% if !@current_customer.downloads.empty? %>
+		<div id="margin1">
+					<h2> Purchase History</h2><br>
+					<div id="margin1">
+						<% @current_customer.downloads.each do |d| %>
+						<%= d.date %> | <%= d.album.title %></td><br \> 
+					<% end %>
+					</div>
+					<% else%>
+					<div id="margin1">
+						<b> You have not purchased any album yet <br><b \>
+					<% end %>
+				</div>
+		</div>
+		
+
+	<div id="aside">
+		<div id="content1">
+		<h3>TO DO:<br></h3>
+		<p>Update your account by clicking the update link.</p>
+			<b><%= link_to "Update account", edit_customer_path(@current_customer) %></b>
+		</div> <!--content1 -->
+	</div> <!--aside -->
+		
+		
+<% end %>
+</div> <!--content-container -->
+

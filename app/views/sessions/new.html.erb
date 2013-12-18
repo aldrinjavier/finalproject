@@ -1,0 +1,29 @@
+<div id="content-container">
+	<div id="content2">
+<h1>Sign in</h1>
+<%=form_tag sessions_path do%>
+
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<table>
+
+<tr>
+<td><%=label_tag :email_address %></td>
+<td><%=text_field_tag :email_address, params[:email_address] %>
+</tr>
+<tr>
+<td><%=label_tag :password%></td>
+<td><%= password_field_tag :password %>
+</tr>
+<tr>
+<td><%= submit_tag "Sign in" %></td>
+</tr>
+</table>
+<br>
+NOT YET REGISTERED? Click here:
+<%= link_to "SIGN UP", new_customer_path %></strong></strong>
+<%end%>
+</div>
+</div> <!--content-container -->

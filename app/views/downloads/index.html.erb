@@ -1,0 +1,32 @@
+<div id="content-container">
+	<div id="content">
+<h1>Listing downloads</h1>
+
+<table>
+  <tr>
+    <th>Customer</th>
+    <th>Album</th>
+    <th>Date</th>
+    <th>Payment method</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @downloads.each do |download| %>
+  <tr>
+    <td><%= download.customer.email_address %></td>
+    <td><%= download.album.title %></td>
+    <td><%= download.date %></td>
+    <td><%= download.payment_method %></td>
+    <td><%= link_to 'Show', download %></td>
+    <td><%= link_to 'Edit', edit_download_path(download) %></td>
+    <td><%= link_to 'Destroy', download, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Download', new_download_path %>
+</div> <!--content-container -->

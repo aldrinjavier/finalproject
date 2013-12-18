@@ -1,0 +1,32 @@
+<div id="content-container">
+	<div id="content2">
+<center><h1>Discover an album<br><br></h1></center>
+
+<table  CELLPADDING=15>
+  <tr>
+    <th>Album Cover</th>
+	<th>Title</th>
+	<th>Artist</th>
+    <th>Price</th>
+    
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @albums.each do |album| %>
+
+  <tr>
+    <td><%= image_tag(album.cover, :size => "100x100") %></td>
+    <td><%= album.title %></td>
+	<td><%= album.artist.artist_name %></td>
+    <td><%= euro(album.price) %></td>
+    <td>Download this album by clicking here: <%= link_to 'View Album', album %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @albums %>
+
+</div> <!--content -->
+</div> <!--content-container -->
+

@@ -1,0 +1,53 @@
+<%# encoding: utf-8 %>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Musicapp</title>
+   <%= stylesheet_link_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css",  "application", :media => "all" %>
+  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js",  "application", "rails.validations" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="container">
+<div id= "navigation1">
+<ul>
+<% if !signed_in? %>
+	<li ><%= link_to "Sign In ", signin_path %>|</li>
+	
+<% else %>
+	<li><font color="white">Hello <%= @current_customer.first_name %>! You are signed in as: <%= @current_customer.email_address %></font></li1>
+	<li ><%= link_to "Sign Out ", signout_path %></li>
+	
+<%end %>
+</ul>
+</div>
+
+	<div id="header">
+	<h1>
+<div id="banner">
+	<%= image_tag("photo.jpg", :size => "500x90") %>
+	</div>
+	</h1>
+</div>
+
+<div id= "navigation">
+<ul>
+
+<li><%= link_to "Home ", root_path%></li>
+<li><%= link_to "About us ", pages_about_path %></li>
+<li><%= link_to "Discover Albums", albums_path %></li>
+<li><%= link_to "Artists", artists_path %></li>
+<li><%= link_to "Genres", genres_path %></li>
+<li><%= link_to "Record Labels", labels_path %></li>
+<div id="search">
+		<%= render :partial=> 'albums/search' %>
+	</div>
+</ul>
+</div>
+<%= yield %>
+</body>
+<%= render "layouts/footer" %>
+</div>
+
+</html>

@@ -1,0 +1,20 @@
+<div id="content-container">
+	<div id="content">
+<h1 align="center">About us</h1>
+<p align="center">We sell music albums by downloading it from our website</p>
+<%= image_tag("bann.jpeg", :height => '200', :width => '600') %> 
+</div>
+<% if !signed_in? %>
+<div id="aside">
+			<div id="content1">
+				<h3>NOT YET REGISTERED?<br></h3>
+					<p>Create an account by clicking the sign up link below. It is absolutely free.</p>
+					<p><b><%= link_to "SIGN UP", new_customer_path %></b></p>
+					<p>After getting registered, you will be able to purchase an album and manage your account.</p>
+				<h3>ALREADY A MEMBER?<br></h3>
+					<p>If you are already registered, please click the sign in link below.</p>
+					<p><b><%= link_to "Sign In ", signin_path %></b></p>
+			</div> <!--content1 -->
+		</div> <!--aside -->
+		<% end %>
+</div> <!--content-container -->
