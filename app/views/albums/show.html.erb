@@ -1,0 +1,80 @@
+<div id="content-container">
+	<div id="content">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @album.title %>
+</p>
+
+<p>
+  <b>Cover:</b>
+  <%= image_tag(@album.cover, :size => "80x80") %>
+</p>
+
+<p>
+  <b>Price:</b>
+ <%= euro(@album.price) %>
+</p>
+
+
+<p>
+  <b>Date released:</b>
+  <%= @album.date_released %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @album.duration %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @album.artist.artist_name %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @album.genre.genre%>
+</p>
+
+<p>
+  <b>Label:</b>
+  <%= @album.label.label %>
+</p>
+<br></br>
+
+<h2> Please share your thoughts on this album</h2>
+	
+		
+	<% if @album.posts.empty? %>
+		<h3>You are the first to comment </h3>
+	<% else %>
+		<div id="posts">
+		<% @album.posts.reverse.each do |post| %>
+			<p><b><%= post.customer.first_name %></b> said: "<%= post.content%>" 
+			<br>Posted <%= time_ago_in_words(post.created_at)%> ago.
+		</p>
+	<% end %>
+	</div>
+		<% end %>
+		
+		<%= form_for([@album, Post.new],:remote =>true) do |f| %>
+		<%= f.text_area :content, :rows => 3%>
+			<div class="actions">
+			<%= f.submit "Post a Comment"%>
+			</div>
+		<% end %>
+		</div> <!--content -->
+		
+	<div id="aside">
+		<div id="content1">
+		<h3>TO DO:<br></h3>
+		<p>Purchase this album by proceeding to check out.</p>
+			<b><%= link_to "Check out", new_download_path(:album_id => @album.id) %></b>
+		<p>To go back to discover an album, click back link</p>
+			<b><%= link_to 'Back', albums_path %></b>
+		</div> <!--content1 -->
+	</div> <!--aside -->
+
+</div> <!--content-container -->

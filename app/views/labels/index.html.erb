@@ -1,0 +1,21 @@
+<div id="content-container">
+	<div id="content2">
+<center><h1>Discover Record Labels</h1></center>
+
+<table CELLPADDING=15>
+
+<% @labels.each do |label| %>
+  <tr>
+    <td><%= label.label %></td>
+    <td><%= link_to 'Show album(s) under this label', label %></td>
+   
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', root_path %>
+
+</div> <!--content -->
+</div> <!--content-container -->

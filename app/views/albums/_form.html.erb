@@ -1,0 +1,55 @@
+<%= form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
+
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div id="search">
+	<%= render :partial => ‘movies/search' %>
+</div>
+
+
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :cover %><br />
+    <%= f.text_field :cover %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :date_released %><br />
+    <%= f.date_select :date_released, { :include_blank => true, :start_year => 1960, :end_year => Time.now.year } %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br />
+    <%= f.text_field :duration %>
+  </div>
+ <div class="field">
+    <%= f.label :artist_id %><br />
+    <%= f.collection_select :artist_id,  Artist.all, :id, :artist_name, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :genre_id %><br />
+    <%= f.collection_select :genre_id, Genre.all, :id, :genre, :prompt => true %>
+  </div>
+  <div class="field">
+    <%= f.label :label_id %><br />
+    <%= f.collection_select :label_id, Label.all, :id, :label, :prompt => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

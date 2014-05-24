@@ -1,0 +1,190 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ #banner {
+  background: #000000;
+  padding: 0px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Georgia", serif;
+  color: #50;
+  text-align: left;
+  img {
+    float: left;
+  }
+}
+
+#wrapper {
+	min-height:100%;
+	position:relative;
+}
+#container
+{
+	margin: 0 auto;
+	width: 900px;
+}
+
+#header
+{
+	background: #ccc;
+}
+
+#header h1 { margin: 0; }
+
+#navigation
+{
+	float: left;
+	width: 900px;
+	background: #B40404;
+}
+
+#navigation ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#navigation ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation li a
+{
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	color: #fff;
+	text-decoration: none;
+	border-right: 1px solid #fff;
+}
+
+#navigation li a:hover { background: #383; }
+
+
+#navigation1
+{
+	float: left;
+	width: 901px;
+	background: #540000;
+}
+
+#navigation1 ul
+{
+	margin: 0;
+	padding: 0;
+}
+
+#navigation1 ul li
+{
+	list-style-type: none;
+	display: inline;
+}
+
+#navigation1 li a
+{
+	display: block;
+	float: right;
+	padding: 5px 10px;
+	color: #fff;
+	text-decoration: none;
+	border-right: 1px solid #fff;
+}
+
+#navigation1 li a:hover { background: #383; }
+
+#searchbox
+{
+float: right;
+color:#00ff00;
+}
+
+#content-container
+{
+	height: 100%;
+	min-height: 540px;
+	float: left;
+	width: 900px;
+	background: #fff url(/wp-content/uploads/layout-two-fixed-background.gif) repeat-y 100% 0;
+}
+#margin1
+{
+	float: left;
+	margin: 0 0 0 20px;
+}
+
+#content2
+{
+	float: left;
+	margin: 0 0 0 30px;
+	overflow:auto;
+	padding-bottom: 50px;
+}
+
+#content1
+{
+	float: left;
+	width: 200px;
+	padding: 20px 0;
+	margin: 0 0 0 25px;
+	display: inline;
+
+}
+
+#content
+{
+	clear: left;
+	float: left;
+	width: 560px;
+	padding: 20px 0;
+	margin: 0 0 0 30px;
+	display: inline;
+	padding-bottom: 50px;
+
+}
+
+#content h2 { margin: 0; }
+
+#aside
+{
+	float: right;
+	width: 240px;
+	padding: 20px 0;
+	margin: 0 0 0 0;
+	display: inline;
+	background-color: #F5A9A9;
+}
+
+#aside h3 { margin: 0; }
+
+#footer
+{
+	clear: both;
+	background: #ccc;
+	text-align: right;
+	padding: 20px;
+	height: 1%;
+	bottom: 0px;
+}
+.footer {
+            background-color:  #540000;
+            width: 860px;        
+            position: relative;
+	text-align: center;
+	padding: 20px;
+	height: 50px;
+	margin-top: -50px;
+	clear:both;
+  padding-top:20px;
+        }

@@ -1,0 +1,19 @@
+<div id="content-container">
+	<div id="content2">
+<p id="notice"><%= notice %></p>
+
+<% if !@label.albums.empty? %>
+<h1><%= @label.label %> <br></h1><br \>
+<% @label.albums.each do |l| %>
+<%= link_to l.title, l %><br></td>
+<br \>
+<% end %>
+
+<% else%>
+		<b> <%= @label.label %> has no album yet <br><b \>
+		<% end %>
+<br>
+
+<%= link_to 'Back', artists_path %>
+</div> <!--content -->
+</div> <!--content-container -->

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  price: 9.99
+  date_released: 2013-10-09
+  duration: MyString
+  artist_id: 1
+  genre_id: 1
+  label_id: 1
+
+two:
+  title: MyString
+  price: 9.99
+  date_released: 2013-10-09
+  duration: MyString
+  artist_id: 1
+  genre_id: 1
+  label_id: 1

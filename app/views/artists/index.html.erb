@@ -1,0 +1,20 @@
+<div id="content-container">
+	<div id="content2">
+<center><h1>Discover Artists</h1></center>
+
+<table CELLPADDING=15>
+
+<% @artists.each do |artist| %>
+  <tr>
+    <td><%= artist.artist_name %></td>
+    <td><%= link_to 'Discography', artist %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Home', root_path %>
+
+</div> <!--content -->
+</div> <!--content-container -->
